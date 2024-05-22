@@ -1,0 +1,1 @@
+cmd_fs/nfs/built-in.o :=  /home/boardcon/GD01D2_SW/DocumentData/DocumentProject/Linux/Source/arm-2011.09/bin/arm-none-linux-gnueabi-ld -EL    -r -o fs/nfs/built-in.o fs/nfs/nfs.o fs/nfs/nfsv2.o fs/nfs/nfsv3.o 

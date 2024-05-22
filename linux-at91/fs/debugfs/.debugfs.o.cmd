@@ -1,0 +1,1 @@
+cmd_fs/debugfs/debugfs.o := /home/boardcon/GD01D2_SW/DocumentData/DocumentProject/Linux/Source/arm-2011.09/bin/arm-none-linux-gnueabi-ld -EL    -r -o fs/debugfs/debugfs.o fs/debugfs/inode.o fs/debugfs/file.o 

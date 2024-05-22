@@ -1,0 +1,1 @@
+cmd_security/built-in.o :=  /home/boardcon/GD01D2_SW/DocumentData/DocumentProject/Linux/Source/arm-2011.09/bin/arm-none-linux-gnueabi-ld -EL    -r -o security/built-in.o security/commoncap.o security/min_addr.o 

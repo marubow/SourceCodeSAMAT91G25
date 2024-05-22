@@ -1,0 +1,20 @@
+#KERNEL=="sda1", SUBSYSTEM=="block", RUN+="/etc/udev/usbmount.sh"
+
+KERNEL=="sd[a-z]", NAME="%k",  OPTIONS="last_rule"
+ACTION=="add", KERNEL=="sd[a-z][0-9]", NAME="%k"
+ACTION=="add", KERNEL=="sd[a-z][0-9]", RUN+="/bin/mkdir -p /media/usbhd-%k"
+ACTION=="add", KERNEL=="sd[a-z][0-9]", RUN+="/bin/mount -t vfat -o rw,utf8=true,noauto,flush,quiet,nodev,nosuid,noexec,noatime,dmask=000,fmask=111 /dev/%k /media/usbhd-%k"
+ACTION=="add", KERNEL=="sd[a-z][0-9]", RUN+="/bin/sh /media/usbhd-%k/UserDemo.sh /media/usbhd-%k", OPTIONS="last_rule"
+
+ACTION=="remove", KERNEL=="sd[a-z][0-9]", RUN+="/bin/umount -l /media/usbhd-%k"
+ACTION=="remove", KERNEL=="sd[a-z][0-9]", RUN+="/bin/rm -rf /media/usbhd-%k", OPTIONS="last_rule"
+
+
+KERNEL=="mmcblk[0-9]", NAME="%k", OPTIONS="last_rule"
+ACTION=="add", KERNEL=="mmcblk[0-9]p[0-9]", NAME="%k"
+ACTION=="add", KERNEL=="mmcblk[0-9]p[0-9]", RUN+="/bin/mkdir -p /media/%k"
+ACTION=="add", KERNEL=="mmcblk[0-9]p[0-9]", RUN+="/bin/mount -t vfat -o rw,utf8=true,noauto,flush,quiet,nodev,nosuid,noexec,noatime,dmask=000,fmask=111 /dev/%k /media/%k"
+ACTION=="add", KERNEL=="mmcblk[0-9]p[0-9]", RUN+="/bin/sh /media/%k/UserDemo.sh /media/%k", OPTIONS="last_rule"
+
+ACTION=="remove", KERNEL=="mmcblk[0-9]p[0-9]", RUN+="/bin/umount -l /media/%k"
+ACTION=="remove", KERNEL=="mmcblk[0-9]p[0-9]", RUN+="/bin/rm -rf /media/%k", OPTIONS="last_rule"

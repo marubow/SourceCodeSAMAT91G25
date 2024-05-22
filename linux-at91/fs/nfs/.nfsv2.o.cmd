@@ -1,0 +1,1 @@
+cmd_fs/nfs/nfsv2.o := /home/boardcon/GD01D2_SW/DocumentData/DocumentProject/Linux/Source/arm-2011.09/bin/arm-none-linux-gnueabi-ld -EL    -r -o fs/nfs/nfsv2.o fs/nfs/nfs2super.o fs/nfs/proc.o fs/nfs/nfs2xdr.o 

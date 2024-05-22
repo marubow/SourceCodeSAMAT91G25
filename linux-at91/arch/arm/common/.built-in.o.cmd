@@ -1,0 +1,1 @@
+cmd_arch/arm/common/built-in.o :=  rm -f arch/arm/common/built-in.o; /home/boardcon/GD01D2_SW/DocumentData/DocumentProject/Linux/Source/arm-2011.09/bin/arm-none-linux-gnueabi-ar rcsD arch/arm/common/built-in.o
